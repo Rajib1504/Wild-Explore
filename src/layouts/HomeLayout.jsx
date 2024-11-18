@@ -1,5 +1,7 @@
 import React from "react";
 import Navbar from "../pages/Navbar";
+import Banner from "../pages/Banner";
+import Footer from "../pages/Footer";
 
 const HomeLayout = () => {
   return (
@@ -8,10 +10,13 @@ const HomeLayout = () => {
         <Navbar></Navbar>
       </header>
       <main>
-        <h1>banner</h1>
+        <Banner></Banner>
+        <h1>cards</h1>
+        <h1>reviews</h1>
+        <h1>photGalary</h1>
       </main>
       <footer>
-        <footer>footer</footer>
+        <Footer></Footer>
       </footer>
     </div>
   );
