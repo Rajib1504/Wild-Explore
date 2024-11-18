@@ -38,11 +38,14 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <img
-            className="w-20"
-            src="https://i.ibb.co/b3KfnJr/fotor-2024111812459.png"
-            alt=""
-          />
+          <div className="flex gap-1 font-bold  items-center">
+            <img
+              className="w-20"
+              src="https://i.ibb.co/b3KfnJr/fotor-2024111812459.png"
+              alt=""
+            />
+            <h2 className="text-xl sm-text-2xl">Wild Explore</h2>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex lg:border-2 lg:rounded-full">
           <ul className="menu menu-horizontal px-1">

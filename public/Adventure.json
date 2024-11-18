@@ -1,0 +1,264 @@
+[
+      {
+        "AdventureTitle": "Everest Base Camp Trek",
+        "Image": "https://example.com/images/everest-base-camp.jpg",
+        "Id": 1,
+        "CategoryName": "Trekking",
+        "ShortDescription": "An unforgettable trek to the base of the world's highest mountain.",
+        "AdventureCost": 1500,
+        "BookingAvailability": "Available",
+        "Location": "Nepal",
+        "Duration": "14 days",
+        "AdventureLevel": "Challenging",
+        "IncludedItems": [
+          "Eco-friendly tea house stays",
+          "Meals (breakfast, lunch, and dinner)",
+          "Local guides and porters",
+          "Permits and park fees"
+        ],
+        "EcoFriendlyFeatures": [
+          "Reusable water bottles",
+          "Low-impact trekking routes",
+          "Support for local communities"
+        ],
+        "MaxGroupSize": 12,
+        "SpecialInstructions": [
+          "Bring eco-friendly toiletries",
+          "Carry reusable water bottles",
+          "Avoid single-use plastics"
+        ]
+      },
+      {
+        "AdventureTitle": "Machu Picchu Eco Trek",
+        "Image": "https://example.com/images/machu-picchu.jpg",
+        "Id": 2,
+        "CategoryName": "Hiking",
+        "ShortDescription": "Explore the ancient Incan ruins via eco-friendly trails.",
+        "AdventureCost": 1300,
+        "BookingAvailability": "Available",
+        "Location": "Peru",
+        "Duration": "7 days",
+        "AdventureLevel": "Moderate",
+        "IncludedItems": [
+          "Lodging in eco-friendly accommodations",
+          "Guided tour of Machu Picchu",
+          "Meals (organic and locally sourced)",
+          "Permits and park fees"
+        ],
+        "EcoFriendlyFeatures": [
+          "Trail cleanup initiatives",
+          "Support for local artisans",
+          "Minimal waste practices"
+        ],
+        "MaxGroupSize": 10,
+        "SpecialInstructions": [
+          "Pack light with biodegradable products",
+          "Respect local customs",
+          "Avoid littering on trails"
+        ]
+      },
+      {
+        "AdventureTitle": "Rockies Wildlife Hike",
+        "Image": "https://example.com/images/rockies.jpg",
+        "Id": 3,
+        "CategoryName": "Wildlife Exploration",
+        "ShortDescription": "Discover the pristine wilderness of the Canadian Rockies.",
+        "AdventureCost": 800,
+        "BookingAvailability": "Available",
+        "Location": "Canada",
+        "Duration": "5 days",
+        "AdventureLevel": "Easy",
+        "IncludedItems": [
+          "Guided wildlife hikes",
+          "Eco-cabin lodging",
+          "Meals (vegetarian options available)",
+          "Park entry fees"
+        ],
+        "EcoFriendlyFeatures": [
+          "Wildlife preservation education",
+          "Leave-no-trace policy",
+          "Solar-powered accommodations"
+        ],
+        "MaxGroupSize": 8,
+        "SpecialInstructions": [
+          "Carry binoculars for wildlife spotting",
+          "Avoid feeding animals",
+          "Wear eco-friendly hiking gear"
+        ]
+      },
+      {
+        "AdventureTitle": "Patagonia Glacier Expedition",
+        "Image": "https://example.com/images/patagonia-glacier.jpg",
+        "Id": 4,
+        "CategoryName": "Glacier Trekking",
+        "ShortDescription": "Experience the awe-inspiring glaciers of Patagonia sustainably.",
+        "AdventureCost": 2200,
+        "BookingAvailability": "Available",
+        "Location": "Argentina",
+        "Duration": "10 days",
+        "AdventureLevel": "Challenging",
+        "IncludedItems": [
+          "Guided glacier trekking",
+          "Eco-lodge stays",
+          "Organic meals",
+          "Equipment rental"
+        ],
+        "EcoFriendlyFeatures": [
+          "Carbon offset programs",
+          "Renewable energy at lodges",
+          "Sustainable trail practices"
+        ],
+        "MaxGroupSize": 10,
+        "SpecialInstructions": [
+          "Wear waterproof clothing",
+          "Use eco-friendly sunscreen",
+          "Respect glacier safety guidelines"
+        ]
+      },
+      {
+        "AdventureTitle": "Mount Kilimanjaro Eco Climb",
+        "Image": "https://example.com/images/kilimanjaro.jpg",
+        "Id": 5,
+        "CategoryName": "Mountain Climbing",
+        "ShortDescription": "Climb Africa’s highest peak while supporting local eco-tourism.",
+        "AdventureCost": 2500,
+        "BookingAvailability": "Available",
+        "Location": "Tanzania",
+        "Duration": "9 days",
+        "AdventureLevel": "Hard",
+        "IncludedItems": [
+          "Professional guides and porters",
+          "Eco-friendly camping gear",
+          "Locally sourced meals",
+          "Park fees"
+        ],
+        "EcoFriendlyFeatures": [
+          "Eco-conscious waste disposal",
+          "Community-driven tourism",
+          "Plastic-free policies"
+        ],
+        "MaxGroupSize": 15,
+        "SpecialInstructions": [
+          "Acclimatize to altitude",
+          "Use biodegradable wet wipes",
+          "Stick to trails"
+        ]
+      },
+      {
+        "AdventureTitle": "Swiss Alps Eco Tour",
+        "Image": "https://example.com/images/swiss-alps.jpg",
+        "Id": 6,
+        "CategoryName": "Scenic Hiking",
+        "ShortDescription": "Traverse the breathtaking Swiss Alps on a sustainable hiking journey.",
+        "AdventureCost": 1800,
+        "BookingAvailability": "Available",
+        "Location": "Switzerland",
+        "Duration": "6 days",
+        "AdventureLevel": "Moderate",
+        "IncludedItems": [
+          "Mountain lodge stays",
+          "Breakfast and dinner (locally sourced)",
+          "Guided day hikes",
+          "Transportation passes"
+        ],
+        "EcoFriendlyFeatures": [
+          "Support for conservation projects",
+          "Eco-friendly transportation",
+          "Waste reduction practices"
+        ],
+        "MaxGroupSize": 12,
+        "SpecialInstructions": [
+          "Carry reusable cutlery",
+          "Avoid plastics",
+          "Follow trail etiquette"
+        ]
+      },
+      {
+        "AdventureTitle": "Annapurna Circuit Trek",
+        "Image": "https://example.com/images/annapurna.jpg",
+        "Id": 7,
+        "CategoryName": "Trekking",
+        "ShortDescription": "Trek through the stunning Annapurna region on eco-friendly trails.",
+        "AdventureCost": 1700,
+        "BookingAvailability": "Available",
+        "Location": "Nepal",
+        "Duration": "12 days",
+        "AdventureLevel": "Moderate",
+        "IncludedItems": [
+          "Eco-friendly tea houses",
+          "Meals (organic and local)",
+          "Experienced guides",
+          "Trekking permits"
+        ],
+        "EcoFriendlyFeatures": [
+          "Low-impact routes",
+          "Support for local economies",
+          "Reusable utensils"
+        ],
+        "MaxGroupSize": 10,
+        "SpecialInstructions": [
+          "Pack lightly",
+          "Avoid non-biodegradable products",
+          "Respect local cultures"
+        ]
+      },
+      {
+        "AdventureTitle": "Bhutan Mountain Retreat",
+        "Image": "https://example.com/images/bhutan.jpg",
+        "Id": 8,
+        "CategoryName": "Cultural Exploration",
+        "ShortDescription": "Explore Bhutan’s pristine mountains and culture sustainably.",
+        "AdventureCost": 2000,
+        "BookingAvailability": "Available",
+        "Location": "Bhutan",
+        "Duration": "8 days",
+        "AdventureLevel": "Easy",
+        "IncludedItems": [
+          "Eco-lodge stays",
+          "Guided cultural tours",
+          "Organic meals",
+          "Local transport"
+        ],
+        "EcoFriendlyFeatures": [
+          "Sustainable tourism policies",
+          "Cultural preservation support",
+          "Plastic-free travel"
+        ],
+        "MaxGroupSize": 8,
+        "SpecialInstructions": [
+          "Respect local traditions",
+          "Carry eco-friendly travel kits",
+          "Avoid littering"
+        ]
+      },
+      {
+        "AdventureTitle": "Andes Eco Adventure",
+        "Image": "https://example.com/images/andes.jpg",
+        "Id": 9,
+        "CategoryName": "Hiking",
+        "ShortDescription": "Hike through the stunning Andes with a focus on sustainability.",
+        "AdventureCost": 1400,
+        "BookingAvailability": "Available",
+        "Location": "Chile",
+        "Duration": "7 days",
+        "AdventureLevel": "Moderate",
+        "IncludedItems": [
+          "Eco-friendly lodges",
+          "Local meals",
+          "Guided day hikes",
+          "Transportation passes"
+        ],
+        "EcoFriendlyFeatures": [
+          "Local community involvement",
+          "Renewable energy use",
+          "Zero waste policies"
+        ],
+        "MaxGroupSize": 10,
+        "SpecialInstructions": [
+          "Wear eco-friendly hiking gear",
+          "Avoid single-use plastics",
+          "Respect nature and wildlife"
+        ]
+      }
+    ]
+    
