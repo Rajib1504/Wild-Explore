@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-transparent  p-0 justify-between items-center">
+      <div className="navbar bg-[#f0f7fad7] p-0 justify-between items-center">
         <div className="">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -40,8 +40,8 @@ const Navbar = () => {
           </div>
           <div className="flex gap-1 font-bold  items-center">
             <img
-              className="w-20"
-              src="https://i.ibb.co/b3KfnJr/fotor-2024111812459.png"
+              className="w-20 hidden sm:block"
+              src="https://i.ibb.co/5xZDc1k/fotor-2024111812459-removebg-preview.png"
               alt=""
             />
             <h2 className="text-xl sm-text-2xl">Wild Explore</h2>
@@ -61,7 +61,14 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className=" mx-2">
+        <div className=" mx-2 flex gap-2 items-center">
+          <div className="tooltip  tooltip-left" data-tip="hello">
+            <img
+              src="https://i.ibb.co/68pYjTF/user-removebg-preview.png"
+              alt=""
+            />
+          </div>
+
           <a className="btn">Login</a>
         </div>
       </div>

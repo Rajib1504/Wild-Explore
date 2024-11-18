@@ -23,7 +23,7 @@ const Banner = () => {
             <img
               src="https://i.ibb.co/FHdv9mm/pexels-aiizen-27992636.jpg"
               alt="Adventure 1"
-              className="w-full h-64 sm:h-80 md:h-96 lg:h-120 object-cover"
+              className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
@@ -35,7 +35,7 @@ const Banner = () => {
                 mountain ranges, embracing the icy allure of nature. Explore
                 untamed beauty and discover adventure like never before.
               </p>
-              <button className="mt-4 px-6 py-2 bg-blue-500 text-white rounded text-sm sm:text-base lg:text-lg">
+              <button className="mt-4  px-6 py-2 bg-blue-500 text-white rounded text-sm sm:text-base lg:text-lg">
                 Start Your Adventure
               </button>
             </div>
@@ -46,7 +46,7 @@ const Banner = () => {
             <img
               src="https://i.ibb.co/DDq1Y8R/pexels-pixabay-273065.jpg"
               alt="Adventure 1"
-              className="w-full h-64 sm:h-80 md:h-96 lg:h-120 object-cover"
+              className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
@@ -69,7 +69,7 @@ const Banner = () => {
             <img
               src="https://i.ibb.co/3W0XcmD/pexels-chris-f-38966-11616147.jpg"
               alt="Adventure 1"
-              className="w-full h-64 sm:h-80 md:h-96 lg:h-120 object-cover"
+              className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
@@ -93,7 +93,7 @@ const Banner = () => {
             <img
               src="https://i.ibb.co/KX5kbXd/pexels-deepakslvoihad-15051400.jpg"
               alt="Adventure 2"
-              className="w-full h-64 sm:h-80 md:h-96 lg:h-120 object-cover"
+              className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
@@ -117,7 +117,7 @@ const Banner = () => {
             <img
               src="https://i.ibb.co/BtcPM0c/pexels-christopher-politano-978995-20598839.jpg"
               alt="Adventure 3"
-              className="w-full h-64 sm:h-80 md:h-96 lg:h-120 object-cover"
+              className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">

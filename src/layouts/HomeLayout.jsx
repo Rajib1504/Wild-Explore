@@ -1,7 +1,10 @@
 import React from "react";
-import Navbar from "../pages/Navbar";
-import Banner from "../pages/Banner";
+import Navbar from "../Components/Navbar";
+import Banner from "../Components/Banner";
 import Footer from "../pages/Footer";
+import Cards from "../pages/Cards";
+import AboutUs from "../Components/AboutUs";
+import Galary from "../Components/Galary";
 
 const HomeLayout = () => {
   return (
@@ -11,9 +14,10 @@ const HomeLayout = () => {
       </header>
       <main>
         <Banner></Banner>
-        <h1>cards</h1>
+        <AboutUs></AboutUs>
+        <Cards></Cards>
+        <Galary></Galary>
         <h1>reviews</h1>
-        <h1>photGalary</h1>
       </main>
       <footer>
         <Footer></Footer>
