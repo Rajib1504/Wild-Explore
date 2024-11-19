@@ -6,6 +6,8 @@ import { FaMoneyCheckAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import Marquee from "react-fast-marquee";
+import Modal from "../Components/Modal";
 
 const AdventureDetails = () => {
   //   const { id } = useParams();
@@ -31,9 +33,9 @@ const AdventureDetails = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="hero bg-blue-100 border-2 border-red-500 p-3">
-        <div className="hero-content flex-col lg:flex-row ">
-          <img src={`${Image}`} className="max-w-3xl rounded-lg shadow-2xl" />
+      <div className="hero bg-blue-100 rounded-lg p-3">
+        <div className="hero-content flex-col lg:flex-row  overflow-x-hidden">
+          <img src={`${Image}`} className="max-w-lg rounded-lg shadow-2xl" />
           <div className="flex flex-col gap-3 pl-4">
             <h1 className="text-4xl font-bold text-center text-gray-500">
               {AdventureTitle}
@@ -71,30 +73,40 @@ const AdventureDetails = () => {
                 ))}
               </p>
             </div>
-            <div className="flex gap-6 justify-center items-center">
-              <p className="flex items-center m-2  gap-2">
-                <FaPersonHiking className="text-3xl text-blue-400" />
-                <p className="">{CategoryName}</p>
-              </p>
-              <p className="flex items-center m-2  gap-2">
-                <IoIosCalendar className="text-3xl text-blue-400" />
-                <p className="text-sm">{Duration}</p>
-              </p>
-              <p className="flex  items-center m-2 gap-2">
-                <BsFillPeopleFill className="text-3xl text-blue-400" />
-                <p className="">{MaxGroupSize}</p>
-              </p>
-              <p className="flex  items-center m-2 gap-2">
-                <MdLocationPin className="text-3xl text-blue-400" />
-                <p className="">{Location}</p>
-              </p>
-              <p className="flex items-center m-2  gap-2">
-                <FaMoneyCheckAlt className="text-3xl text-blue-400" />
-                <p className="">{AdventureCost}</p>
-              </p>
-            </div>
+            <Marquee className="w-9/12">
+              <div className="flex gap-6 justify-center items-center">
+                <p className="flex items-center m-2  gap-2">
+                  <FaPersonHiking className="text-3xl text-blue-400" />
+                  <p className="">{CategoryName}</p>
+                </p>
+                <p className="flex items-center m-2  gap-2">
+                  <IoIosCalendar className="text-3xl text-blue-400" />
+                  <p className="text-sm">{Duration}</p>
+                </p>
+                <p className="flex  items-center m-2 gap-2">
+                  <BsFillPeopleFill className="text-3xl text-blue-400" />
+                  <p className="">{MaxGroupSize}</p>
+                </p>
+                <p className="flex  items-center m-2 gap-2">
+                  <MdLocationPin className="text-3xl text-blue-400" />
+                  <p className="">{Location}</p>
+                </p>
+                <p className="flex items-center m-2  gap-2">
+                  <FaMoneyCheckAlt className="text-3xl text-blue-400" />
+                  <p className="">{AdventureCost}</p>
+                </p>
+              </div>
+            </Marquee>
             <div className="mx-auto m-2">
-              <button className="btn btn-primary ">Get Started</button>
+              <button
+                onClick={() =>
+                  document.getElementById("my_modal_5").showModal()
+                }
+                className="btn btn-primary  btn-wide"
+              >
+                Get Started
+              </button>
+              <Modal></Modal>
             </div>
           </div>
         </div>
