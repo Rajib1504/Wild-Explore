@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, setUser, logOut } = useContext(AuthContext);
   console.log(user);
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="navbar bg-[#f0f7fad7] p-0 justify-between items-center">
@@ -31,11 +34,11 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Home</a>
+                <Link to={"/"}>Home</Link>
               </li>
 
               <li>
-                <a>About</a>
+                <Link to={"/"}>About</Link>
               </li>
               <li>
                 <a>Update profile</a>
@@ -54,7 +57,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex lg:border-2 lg:rounded-full">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <Link to={"/"}>Home</Link>
             </li>
 
             <li>
@@ -66,16 +69,21 @@ const Navbar = () => {
           </ul>
         </div>
         <div className=" mx-2 flex gap-2 items-center">
-          <div className="tooltip  tooltip-left" data-tip="hello">
+          <div className="tooltip  tooltip-left" data-tip={`${user?.email}`}>
             <img
               src="https://i.ibb.co/68pYjTF/user-removebg-preview.png"
               alt=""
             />
           </div>
-
-          <Link to="/auth/login" className="btn">
-            Login
-          </Link>
+          {user && user?.email ? (
+            <button onClick={logOut} className="btn">
+              Logout
+            </button>
+          ) : (
+            <Link to="/auth/login" className="btn">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

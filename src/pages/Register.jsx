@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 import Navbar from "../Components/Navbar";
 import Footer from "./Footer";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -9,16 +11,18 @@ import { toast, ToastContainer } from "react-toastify";
 const Register = () => {
   const [success, setSuccess] = useState(false);
   const [fail, setFail] = useState("");
-  const { createUser, setUser } = useContext(AuthContext);
+  const { createUser, setUser, updateUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const handelSubmit = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const photo = e.target.photoUrl.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+    const form = new FormData(e.target);
+    const name = form.get("name");
+    const photo = form.get("photo");
+    const email = form.get("email");
+    const password = form.get("password");
     const terms = e.target.terms.checked;
-    // console.log(name, photo, email, password, terms);
+    console.log({ name, photo, email, password });
 
     const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
     if (!regex.test(password)) {
@@ -28,6 +32,7 @@ const Register = () => {
       );
       return;
     }
+
     if (!terms) {
       toast(`⚠️ Please Accpt the Terms`);
       return;
@@ -37,14 +42,16 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        toast(` 🤩 ${"Registration Successful"}`);
+        console.log(user);
         navigate("/");
+        toast(` 🤩 ${"Registration Successful"}`);
       })
       .catch((error) => {
         const errorMessage = error.message;
         toast(`😫 ${errorMessage}`);
       });
   };
+
   return (
     <div>
       <Navbar></Navbar>
@@ -77,7 +84,7 @@ const Register = () => {
             </label>
             <input
               type="url"
-              name="photoUrl"
+              name="photo"
               placeholder="Enter your photo URL"
               className="w-full p-2.5 text-gray-900 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500"
             />
@@ -99,12 +106,23 @@ const Register = () => {
             <label className="block mb-1 text-sm text-left font-medium">
               Password
             </label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-              className="w-full p-2.5 text-gray-900 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500"
-            />
+            {/* <h2 className="text-left font-semibold">Password:</h2> */}
+            <div
+              className={`w-full p-2.5 bg-gray-200 text-gray-900 border border-gray-300 rounded-md focus-within:border-gray-500 flex justify-between items-center`}
+            >
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Enter your password"
+                className="bg-gray-200 w-full border-0 focus:outline-none"
+              />
+              <div
+                onClick={() => setShowPassword(!showPassword)}
+                className="cursor-pointer"
+              >
+                {showPassword ? <FaRegEye /> : <FaEyeSlash />}
+              </div>
+            </div>
             {fail && <p className="text-red-500 text-sm">{fail}</p>}
 
             {/* Terms and Conditions Checkbox */}

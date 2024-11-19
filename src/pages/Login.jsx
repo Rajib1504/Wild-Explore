@@ -1,10 +1,36 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import Navbar from "../Components/Navbar";
 import Footer from "./Footer";
+import { FaRegEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const { login, setUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        toast.success("Login successful");
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  };
+
   return (
     <div>
       <Navbar></Navbar>
@@ -17,7 +43,7 @@ const Login = () => {
           </h2>
 
           {/* Form */}
-          <form className="flex flex-col gap-2">
+          <form onSubmit={handelSubmit} className="flex flex-col gap-2">
             {/* Email Field */}
 
             <h2 className="text-left font-semibold">Email Address:</h2>
@@ -30,12 +56,23 @@ const Login = () => {
 
             {/* Password Field */}
             <h2 className="text-left font-semibold">Password:</h2>
-            <input
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-              className="w-full pl-10 p-2.5  bg-gray-200  text-gray-900 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500"
-            />
+            <div
+              className={`w-full p-2.5 bg-gray-200 text-gray-900 border border-gray-300 rounded-md focus-within:border-gray-500 flex justify-between items-center`}
+            >
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Enter your password"
+                className="bg-gray-200 w-full border-0 focus:outline-none"
+              />
+              <div
+                onClick={() => setShowPassword(!showPassword)}
+                className="cursor-pointer"
+              >
+                {showPassword ? <FaRegEye /> : <FaEyeSlash />}
+              </div>
+            </div>
+
             <Link
               to="/auth/forgetPassword"
               className="text-red-400 underline font-light"

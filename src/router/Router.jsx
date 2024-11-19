@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ForgetPassword from "../pages/ForgetPassword";
 import Error from "../pages/Error";
+import AdventureDetails from "../pages/AdventureDetails";
 
 const Router = createBrowserRouter([
   {
@@ -33,8 +34,16 @@ const Router = createBrowserRouter([
     element: <Error></Error>,
   },
   {
-    path: "/adventure Details",
-    element: <h1>adventure details</h1>,
+    path: "/card/:Id",
+    element: <AdventureDetails></AdventureDetails>,
+    loader: async ({ params }) => {
+      const res = await fetch("/Adventure.json");
+      const data = await res.json();
+      // console.log(data, params.Id);
+      const singleData = data.find((d) => d.Id == params.Id);
+      // console.log(singleData);
+      return singleData;
+    },
   },
   {
     path: "/my Profile",

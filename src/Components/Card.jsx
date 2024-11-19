@@ -2,6 +2,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { BsClock } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 const Card = ({ card }) => {
   //   console.log(card);
   const {
@@ -40,30 +41,9 @@ const Card = ({ card }) => {
             ))}
           </ul>
 
-          {/* <div className="flex gap-2  items-center">
-            <IoLocationSharp className="text-green-300 text-xl" />
-            <p>location</p>
-          </div> */}
-          {/* <div className="flex gap-2  items-center">
-            <GiTakeMyMoney className="text-green-400" />
-            <span className="text-yellow-200 text-lg font-semibold">Form </span>
-            <span>120</span>
-          </div> */}
-          {/* <div className="border-t pt-2  flex justify-between items-center">
-            <div>
-              <div className="flex gap-2">
-                <BsClock className="text-green-400" />
-                <p>time duration</p>
-              </div>
-              <div>
-                <p>person capacity</p>
-              </div>
-            </div>
-            <div>Explore</div>
-          </div> */}
-          <button className="btn mt-3 mb-2 bg-blue-400 ">
+          <Link to={`/card/${card.Id}`} className="btn mt-3 mb-2 bg-blue-400 ">
             Explore Now <FaArrowRight />
-          </button>
+          </Link>
         </div>
       </div>
     </div>
