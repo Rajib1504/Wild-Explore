@@ -7,8 +7,8 @@ const ForgetPassword = () => {
   return (
     <div>
       <Navbar></Navbar>{" "}
-      <div className="flex items-center justify-center min-h-[80vh]">
-        <div className="w-full max-w-md  p-8 space-y-6 bg-base-100 rounded-lg shadow-xl">
+      <div className="flex items-center justify-center min-h-[80vh] bg-[url('https://i.ibb.co/y8ZZGrp/pexels-triemli-28239466.jpg')] bg-cover object-right">
+        <div className="w-full max-w-md  p-8 space-y-6 rounded-lg bg-[#d2d4d382] shadow-xl">
           {/* Title */}
           <h2 className="text-2xl mb-10 mt-1 font-bold text-center">
             Recover your account

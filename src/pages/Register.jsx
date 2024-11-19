@@ -1,23 +1,63 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import Navbar from "../Components/Navbar";
 import Footer from "./Footer";
+import { AuthContext } from "../Provider/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
 
 const Register = () => {
+  const [success, setSuccess] = useState(false);
+  const [fail, setFail] = useState("");
+  const { createUser, setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photo = e.target.photoUrl.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const terms = e.target.terms.checked;
+    // console.log(name, photo, email, password, terms);
+
+    const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+    if (!regex.test(password)) {
+      toast(`⚠️ Please Follow Password Instraction `);
+      setFail(
+        "Password should contain At least one Uppercase,one Lowercase and Minimum 6 characters."
+      );
+      return;
+    }
+    if (!terms) {
+      toast(`⚠️ Please Accpt the Terms`);
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        toast(` 🤩 ${"Registration Successful"}`);
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast(`😫 ${errorMessage}`);
+      });
+  };
   return (
     <div>
       <Navbar></Navbar>
 
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="w-full max-w-md p-8 space-y-6 shadow-xl rounded-lg">
+      <div className="flex items-center justify-center min-h-screen bg-[url('https://i.ibb.co/mqPYG2V/pexels-chris-f-38966-3888007.jpg')] bg-cover object-right">
+        <div className="w-full max-w-md p-8 space-y-6 shadow-xl bg-[#63bde46a] rounded-lg">
           {/* Title */}
           <h2 className="text-2xl font-semibold text-center">
             Register your account
           </h2>
 
           {/* Form */}
-          <form className="flex flex-col gap-2 ">
+          <form onSubmit={handelSubmit} className="flex flex-col gap-2 ">
             {/* Name Field */}
 
             <label className="block mb-1 text-sm text-left font-medium">
@@ -65,6 +105,7 @@ const Register = () => {
               placeholder="Enter your password"
               className="w-full p-2.5 text-gray-900 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500"
             />
+            {fail && <p className="text-red-500 text-sm">{fail}</p>}
 
             {/* Terms and Conditions Checkbox */}
             <div className="flex items-center space-x-2">
@@ -89,10 +130,10 @@ const Register = () => {
               className="w-full btn py-2 text-white bg-blue-300 rounded-md hover:bg-blue-400 focus:outline-none felx gap-3 items-center"
             >
               <FaGoogle />
-              Google Register
+              Google Login
             </button>
           </form>
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-sm text-black-500">
             Already Have An Account?{" "}
             <Link to="/auth/Login" className="text-red-500 hover:underline">
               Login

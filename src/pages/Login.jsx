@@ -9,8 +9,8 @@ const Login = () => {
     <div>
       <Navbar></Navbar>
 
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="w-full max-w-md p-8 space-y-6 bg-base-100 rounded-lg shadow-xl">
+      <div className="flex items-center justify-center min-h-screen bg-[url('https://i.ibb.co/vQvMH9z/pexels-visitalmaty-848599.jpg')] bg-cover object-scale-down scroll-m-3">
+        <div className="w-full max-w-md p-8 space-y-6  bg-[#7ae1e152] rounded-lg shadow-xl">
           {/* Title */}
           <h2 className="text-2xl mb-10 mt-1 font-bold text-center">
             Login your account
@@ -38,7 +38,7 @@ const Login = () => {
             />
             <Link
               to="/auth/forgetPassword"
-              className="text-blue-400 underline font-light"
+              className="text-red-400 underline font-light"
             >
               Forget password
             </Link>
@@ -60,7 +60,7 @@ const Login = () => {
           </form>
 
           {/* Register Link */}
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-sm text-black-500">
             Don’t Have An Account?{" "}
             <Link
               to={"/auth/register"}
