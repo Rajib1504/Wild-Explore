@@ -11,7 +11,8 @@ import { toast, ToastContainer } from "react-toastify";
 const Register = () => {
   const [success, setSuccess] = useState(false);
   const [fail, setFail] = useState("");
-  const { createUser, setUser, updateUser } = useContext(AuthContext);
+  const { createUser, setUser, updateUserProfile, logInbyGoogle } =
+    useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const handelSubmit = (e) => {
@@ -42,9 +43,14 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        console.log(user);
-        navigate("/");
         toast(` 🤩 ${"Registration Successful"}`);
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+            navigate("/");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -56,7 +62,7 @@ const Register = () => {
     <div>
       <Navbar></Navbar>
 
-      <div className="flex items-center justify-center min-h-screen bg-[url('https://i.ibb.co/mqPYG2V/pexels-chris-f-38966-3888007.jpg')] bg-cover object-right">
+      <div className="flex p-2 items-center justify-center min-h-screen bg-[url('https://i.ibb.co/mqPYG2V/pexels-chris-f-38966-3888007.jpg')] bg-cover object-right">
         <div className="w-full max-w-md p-8 space-y-6 shadow-xl bg-[#63bde46a] rounded-lg">
           {/* Title */}
           <h2 className="text-2xl font-semibold text-center">
@@ -145,6 +151,7 @@ const Register = () => {
             </button>
             <button
               type="submit"
+              onClick={logInbyGoogle}
               className="w-full btn py-2 text-white bg-blue-300 rounded-md hover:bg-blue-400 focus:outline-none felx gap-3 items-center"
             >
               <FaGoogle />

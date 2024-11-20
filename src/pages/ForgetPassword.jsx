@@ -1,13 +1,44 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Footer from "./Footer";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const ForgetPassword = () => {
+  const [email, setEmail] = useState("");
+  const location = useLocation();
+
+  const { forgetPassword } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (location.state?.email) {
+      setEmail(location.state.email);
+    }
+  }, [location.state]);
+
+  const handleResetPassword = (e) => {
+    e.preventDefault();
+    if (!email) {
+      toast.error("Please provide a valid email.");
+      return;
+    }
+
+    forgetPassword(email)
+      .then(() => {
+        window.open("https://mail.google.com", "_blank");
+        toast.success("Password reset email send. please check your email.");
+      })
+      .catch((error) => {
+        toast.error("Failed to send password reset email. Please try again.!");
+      });
+  };
+
   return (
     <div>
       <Navbar></Navbar>{" "}
-      <div className="flex items-center justify-center min-h-[80vh] bg-[url('https://i.ibb.co/y8ZZGrp/pexels-triemli-28239466.jpg')] bg-cover object-right">
+      <div className="flex items-center justify-center min-h-screen bg-[url('https://i.ibb.co/y8ZZGrp/pexels-triemli-28239466.jpg')] bg-cover object-right">
         <div className="w-full max-w-md  p-8 space-y-6 rounded-lg bg-[#d2d4d382] shadow-xl">
           {/* Title */}
           <h2 className="text-2xl mb-10 mt-1 font-bold text-center">
@@ -15,27 +46,30 @@ const ForgetPassword = () => {
           </h2>
 
           {/* Form */}
-          <form className="flex flex-col gap-2">
+          <form onSubmit={handleResetPassword} className="flex flex-col gap-2">
             {/* Email Field */}
 
             <h2 className="text-left font-semibold">Email Address:</h2>
+
             <input
               type="email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
               className="w-full pl-4 p-2.5 text-gray-900  bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500"
             />
 
             <button
               type="submit"
-              className="w-full py-2 btn text-white mt-6 bg-[#d28eaed7] rounded-md hover:bg-[#e17979d7] focus:outline-none"
+              className="w-full py-2 btn text-white mt-6 bg-[#d28eaef5] rounded-md hover:bg-[#e17979d7] focus:outline-none"
             >
               Sent Code
             </button>
           </form>
 
           {/* Register Link */}
-          <div className="flex justify-center gap-2 font-light items-center">
+          <div className="flex justify-center gap-2 font-semibold items-center">
             <Link
               to={"/auth/register"}
               className="text-red-500 hover:underline"

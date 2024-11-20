@@ -36,13 +36,14 @@ const Navbar = () => {
               <li>
                 <Link to={"/"}>Home</Link>
               </li>
-
               <li>
-                <Link to={"/"}>About</Link>
+                <Link to={"/updateProfile"}>Update Profile</Link>
               </li>
-              <li>
-                <a>Update profile</a>
-              </li>
+              {user && (
+                <li>
+                  <Link to={"/myprofile"}>My Profile</Link>
+                </li>
+              )}
             </ul>
           </div>
           <div className="flex gap-1 font-bold  items-center">
@@ -59,22 +60,33 @@ const Navbar = () => {
             <li>
               <Link to={"/"}>Home</Link>
             </li>
-
             <li>
-              <a>About</a>
+              <Link to={"/updateProfile"}>Update Profile</Link>
             </li>
-            <li>
-              <a>Update Profile</a>
-            </li>
+            {user && (
+              <li>
+                <Link to={"/myprofile"}>My Profile</Link>
+              </li>
+            )}
           </ul>
         </div>
+        {/* tool tip  */}
         <div className=" mx-2 flex gap-2 items-center">
-          <div className="tooltip  tooltip-left" data-tip={`${user?.email}`}>
-            <img
-              src="https://i.ibb.co/68pYjTF/user-removebg-preview.png"
-              alt=""
-            />
-          </div>
+          {user && user?.email ? (
+            <div
+              className="tooltip tooltip-bottom z-10"
+              data-tip={user?.displayName}
+            >
+              <div className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img alt="Profile Picture" src={user?.photoURL} />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <img src="https://i.ibb.co/5kvRVMX/user.png" alt="" />
+          )}
+          {/* log in  */}
           {user && user?.email ? (
             <button onClick={logOut} className="btn">
               Logout

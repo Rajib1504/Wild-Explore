@@ -9,7 +9,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const { login, setUser } = useContext(AuthContext);
+  const { login, setUser, logInbyGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const handelSubmit = (e) => {
@@ -35,7 +35,7 @@ const Login = () => {
     <div>
       <Navbar></Navbar>
 
-      <div className="flex items-center justify-center min-h-screen bg-[url('https://i.ibb.co/vQvMH9z/pexels-visitalmaty-848599.jpg')] bg-cover object-scale-down scroll-m-3">
+      <div className="flex p-2 items-center justify-center min-h-screen bg-[url('https://i.ibb.co/vQvMH9z/pexels-visitalmaty-848599.jpg')] bg-cover object-scale-down scroll-m-3">
         <div className="w-full max-w-md p-8 space-y-6  bg-[#7ae1e152] rounded-lg shadow-xl">
           {/* Title */}
           <h2 className="text-2xl mb-10 mt-1 font-bold text-center">
@@ -89,6 +89,7 @@ const Login = () => {
 
             <button
               type="submit"
+              onClick={logInbyGoogle}
               className="w-full btn py-2 text-white bg-blue-300 rounded-md hover:bg-blue-400 focus:outline-none felx gap-3 items-center"
             >
               <FaGoogle />

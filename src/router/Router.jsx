@@ -6,6 +6,9 @@ import Register from "../pages/Register";
 import ForgetPassword from "../pages/ForgetPassword";
 import Error from "../pages/Error";
 import AdventureDetails from "../pages/AdventureDetails";
+import PrivateRouter from "./PrivateRouter";
+import MyProfile from "../Components/MyProfile";
+import UpdateProfile from "../Components/UpdateProfile";
 
 const Router = createBrowserRouter([
   {
@@ -35,7 +38,11 @@ const Router = createBrowserRouter([
   },
   {
     path: "/card/:Id",
-    element: <AdventureDetails></AdventureDetails>,
+    element: (
+      <PrivateRouter>
+        <AdventureDetails></AdventureDetails>
+      </PrivateRouter>
+    ),
     loader: async ({ params }) => {
       const res = await fetch("/Adventure.json");
       const data = await res.json();
@@ -46,8 +53,16 @@ const Router = createBrowserRouter([
     },
   },
   {
-    path: "/my Profile",
-    element: <h1>my profile</h1>,
+    path: "/myprofile",
+    element: (
+      <PrivateRouter>
+        <MyProfile></MyProfile>,
+      </PrivateRouter>
+    ),
+  },
+  {
+    path: "/updateProfile",
+    element: <UpdateProfile></UpdateProfile>,
   },
 ]);
 
