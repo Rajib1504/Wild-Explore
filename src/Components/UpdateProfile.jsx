@@ -7,6 +7,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const UpdatedProile = () => {
   const { updateUserProfile, user, setUser, setLoading } =
+    //     console.log(loading);
     useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -25,7 +26,6 @@ const UpdatedProile = () => {
         setUser({ ...user, displayName: name, photoURL: photo });
         e.target.reset();
         toast.success("Profile updated successfully!");
-        setLoading(false);
         navigate("/myprofile");
       })
 
@@ -73,7 +73,7 @@ const UpdatedProile = () => {
             </label>
 
             <div className="w-full">
-              <button className="btn btn-block bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white text-xl font-bold">
+              <button className="btn btn-block bg-gradient-to-r from-indigo-200 via-purple-300 to-pink-200  text-white text-xl font-bold">
                 Update
               </button>
             </div>

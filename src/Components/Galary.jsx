@@ -1,17 +1,17 @@
 import Marquee from "react-fast-marquee";
 const Galary = () => (
   <div>
-    <div className="bg-[#f0f7fad7] mt-4">
+    <div className="bg-[#f0f7fad7]  animate__animated animate__fadeInUp animate__slower mt-4 animate__delay-3s">
       <div className=" flex flex-col justify-center items-center gap-3 py-6 sm:w-full md:w-11/12">
         <h1 className="text-2xl font-light mt-4">Memories we Saved</h1>
         <p className="text-center text-base sm:text-lg font-light sm:w-full md:w-9/12 mb-6">
-          Adventures are more than just journeys—they’re stories we carry with
-          us forever. At Wild Explore, we’ve captured unforgettable moments
-          filled with breathtaking mountain vistas, icy trails, and the joy of
-          exploration. These memories reflect our passion for connecting with
-          nature and embracing its beauty. Take a glimpse into our adventures
-          and relive the magic of the mountains through these cherished
-          snapshots!
+          <span className="text-3xl text-blue-300">A</span>dventures are more
+          than just journeys—they’re stories we carry with us forever. At Wild
+          Explore, we’ve captured unforgettable moments filled with breathtaking
+          mountain vistas, icy trails, and the joy of exploration. These
+          memories reflect our passion for connecting with nature and embracing
+          its beauty. Take a glimpse into our adventures and relive the magic of
+          the mountains through these cherished snapshots!
         </p>
       </div>
     </div>

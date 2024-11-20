@@ -4,6 +4,7 @@ import auth from "../Firebase/FireBase.config";
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -42,7 +43,6 @@ const AuthProvider = ({ children }) => {
   };
   // update Profile
   const updateUserProfile = (updateData) => {
-    setLoading(true);
     return updateProfile(auth.currentUser, updateData);
   };
   // google provider
@@ -50,6 +50,11 @@ const AuthProvider = ({ children }) => {
   const logInbyGoogle = () => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
+  };
+  // forgetpasword
+  const forgetPassword = (email) => {
+    setLoading(true);
+    return sendPasswordResetEmail(auth, email);
   };
   const authInfo = {
     user,
@@ -60,6 +65,7 @@ const AuthProvider = ({ children }) => {
     updateUserProfile,
     logInbyGoogle,
     loading,
+    forgetPassword,
   };
   return (
     <div>

@@ -16,7 +16,7 @@ const Card = ({ card }) => {
   } = card;
   return (
     <div>
-      <div className="mx-auto mb-3 mt-6  shadow-xl bg-base-100 rounded-xl w-80">
+      <div className="mx-auto mb-3 mt-6  animate__animated animate__fadeInUp animate__slower shadow-xl bg-base-100 rounded-xl w-80">
         <figure className="pt-5 pb-3 w-full px-4">
           <img
             src={Image}
@@ -25,7 +25,7 @@ const Card = ({ card }) => {
           />
         </figure>
 
-        <div className="bg-white rounded-lg p-4 w-full flex justify-center flex-col ">
+        <div className="bg-white  animate__animated animate__fadeInUp animate__slow animate__delay-2s rounded-lg p-4 w-full flex justify-center flex-col ">
           <h3 className="text-xl hover:text-green-300  font-bold">
             {AdventureTitle}
           </h3>

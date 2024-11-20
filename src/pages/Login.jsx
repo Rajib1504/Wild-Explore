@@ -9,6 +9,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  console.log(email);
   const { login, setUser, logInbyGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -49,6 +51,7 @@ const Login = () => {
             <h2 className="text-left font-semibold">Email Address:</h2>
             <input
               type="email"
+              onChange={(e) => setEmail(e.target.value)}
               name="email"
               placeholder="Enter your email address"
               className="w-full pl-4 p-2.5 text-gray-900  bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500"
@@ -75,6 +78,7 @@ const Login = () => {
 
             <Link
               to="/auth/forgetPassword"
+              state={{ email }}
               className="text-red-400 underline font-light"
             >
               Forget password

@@ -5,6 +5,8 @@ import Footer from "../pages/Footer";
 import Cards from "../pages/Cards";
 import AboutUs from "../Components/AboutUs";
 import Galary from "../Components/Galary";
+import PracticeZone from "../Components/PracticeZone";
+import PracticeText from "../Components/PracticeText";
 
 const HomeLayout = () => {
   return (
@@ -17,7 +19,8 @@ const HomeLayout = () => {
         <AboutUs></AboutUs>
         <Cards></Cards>
         <Galary></Galary>
-        <h1>reviews</h1>
+        <PracticeText></PracticeText>
+        <PracticeZone></PracticeZone>
       </main>
       <footer>
         <Footer></Footer>
