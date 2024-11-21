@@ -58,7 +58,6 @@ const ForgetPassword = () => {
             </button>
           </form>
 
-          {/* Register Link  & login */}
           <div className="flex justify-center gap-2 font-semibold items-center">
             <Link
               to={"/auth/register"}

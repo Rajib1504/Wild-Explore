@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 const Error = () => {
   return (
     <div>
+      <Navbar></Navbar>
       <body className="bg-[#f0f7fad7] flex items-center justify-center min-h-screen">
         <div className="text-center">
           <div className="flex gap-2 justify-center ml-4 items-center">
