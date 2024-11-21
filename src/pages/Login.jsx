@@ -30,6 +30,18 @@ const Login = () => {
         toast.error(errorMessage);
       });
   };
+  const handelgoogle = () => {
+    logInbyGoogle()
+      .then((result) => {
+        setUser(result.user);
+        navigate("/");
+        toast.success("Login successful");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  };
 
   return (
     <div>
@@ -87,7 +99,7 @@ const Login = () => {
 
             <button
               type="submit"
-              onClick={logInbyGoogle}
+              onClick={handelgoogle}
               className="w-full btn py-2 text-white bg-blue-300 rounded-md hover:bg-blue-400 focus:outline-none felx gap-3 items-center"
             >
               <FaGoogle />

@@ -7,7 +7,7 @@ import AboutUs from "../Components/AboutUs";
 import Galary from "../Components/Galary";
 import PracticeZone from "../Components/PracticeZone";
 import PracticeText from "../Components/PracticeText";
-import { useLocation } from "react-router-dom";
+import { ScrollRestoration, useLocation } from "react-router-dom";
 
 const HomeLayout = () => {
   const location = useLocation();
@@ -18,6 +18,7 @@ const HomeLayout = () => {
   }, [location]);
   return (
     <div>
+      <ScrollRestoration></ScrollRestoration>
       <header>
         <Navbar></Navbar>
       </header>

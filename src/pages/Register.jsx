@@ -53,6 +53,21 @@ const Register = () => {
       .catch((error) => {
         const errorMessage = error.message;
         toast(`😫 ${errorMessage}`);
+        return;
+      });
+  };
+  const handelgoogleLogin = () => {
+    logInbyGoogle()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        toast(` 🤩 ${"Registration Successful"}`);
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast(`😫 ${errorMessage}`);
+        return;
       });
   };
 
@@ -147,7 +162,7 @@ const Register = () => {
             </button>
             <button
               type="submit"
-              onClick={logInbyGoogle}
+              onClick={handelgoogleLogin}
               className="w-full btn py-2 text-white bg-blue-300 rounded-md hover:bg-blue-400 focus:outline-none felx gap-3 items-center"
             >
               <FaGoogle />
