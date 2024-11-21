@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import Navbar from "../Components/Navbar";
-import Footer from "./Footer";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -60,8 +58,6 @@ const Register = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
-
       <div className="flex p-2 items-center justify-center min-h-screen bg-[url('https://i.ibb.co/mqPYG2V/pexels-chris-f-38966-3888007.jpg')] bg-cover object-right">
         <div className="w-full max-w-md p-8 space-y-6 shadow-xl bg-[#63bde46a] rounded-lg">
           {/* Title */}
@@ -168,7 +164,6 @@ const Register = () => {
           {/* Register Link */}
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

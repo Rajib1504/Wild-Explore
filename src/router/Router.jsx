@@ -9,6 +9,7 @@ import AdventureDetails from "../pages/AdventureDetails";
 import PrivateRouter from "./PrivateRouter";
 import MyProfile from "../Components/MyProfile";
 import UpdateProfile from "../Components/UpdateProfile";
+import AuthLayout from "../pages/AuthLayout";
 
 const Router = createBrowserRouter([
   {
@@ -16,17 +17,24 @@ const Router = createBrowserRouter([
     element: <HomeLayout></HomeLayout>,
   },
   {
-    path: "/auth/login",
-    element: <Login></Login>,
+    path: "/auth",
+    element: <AuthLayout></AuthLayout>,
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/auth/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/auth/forgetPassword",
+        element: <ForgetPassword></ForgetPassword>,
+      },
+    ],
   },
-  {
-    path: "/auth/register",
-    element: <Register></Register>,
-  },
-  {
-    path: "/auth/forgetPassword",
-    element: <ForgetPassword></ForgetPassword>,
-  },
+
   {
     path: "/*",
     element: <Error></Error>,

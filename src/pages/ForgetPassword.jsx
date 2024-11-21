@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import Navbar from "../Components/Navbar";
-import Footer from "./Footer";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const ForgetPassword = () => {
@@ -31,7 +29,6 @@ const ForgetPassword = () => {
 
   return (
     <div>
-      <Navbar></Navbar>{" "}
       <div className="flex items-center justify-center min-h-screen bg-[url('https://i.ibb.co/pW3tYqq/pexels-sebastian-804570.jpg')] bg-cover object-right">
         <div className="w-full max-w-md  p-8 space-y-6 rounded-lg bg-[#d2d4d382] shadow-xl">
           {/* Title */}
@@ -71,7 +68,6 @@ const ForgetPassword = () => {
           </div>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

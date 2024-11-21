@@ -1,8 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
-import Navbar from "../Components/Navbar";
-import Footer from "./Footer";
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -35,8 +33,6 @@ const Login = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
-
       <div className="flex p-2 items-center justify-center min-h-screen bg-[url('https://i.ibb.co/vQvMH9z/pexels-visitalmaty-848599.jpg')] bg-cover object-scale-down scroll-m-3">
         <div className="w-full max-w-md p-8 space-y-6  bg-[#7ae1e152] rounded-lg shadow-xl">
           {/* Title */}
@@ -111,7 +107,6 @@ const Login = () => {
           </p>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };
