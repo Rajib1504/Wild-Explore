@@ -4,6 +4,7 @@ import { FaPersonHiking } from "react-icons/fa6";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { FaMoneyCheckAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
+import { FaRegClock } from "react-icons/fa6";
 import Footer from "./Footer";
 import {
   ScrollRestoration,
@@ -13,7 +14,6 @@ import {
 } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Marquee from "react-fast-marquee";
-import Modal from "../Components/Modal";
 
 const AdventureDetails = () => {
   //   const { id } = useParams();
@@ -253,6 +253,33 @@ const AdventureDetails = () => {
       </div>
 
       <Footer></Footer>
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <div>
+            <FaRegClock className="mx-auto text-blue-400 text-5xl text-bgbton" />
+          </div>
+          <div className="text-center mt-5">
+            <h3 className="font-bold text-lg">
+              {" "}
+              Consultation Time Unavailable!
+            </h3>
+            <p className="py-4">
+              Thank you so much for riching us. Unfortunately we're not avalible
+              now. Our consultation team is open form 10:00 AM to 8:00 PM.
+              Please visit during this time or provide a message for further
+              assistance.
+            </p>
+          </div>
+          <div className="modal-action">
+            <form method="dialog" className="w-full">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn btn-block bg-blue-400 text-white font-semibold text-xl hover:bg-blue-600">
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </>
   );
 };

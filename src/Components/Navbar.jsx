@@ -36,9 +36,11 @@ const Navbar = () => {
               <li>
                 <Link to={"/"}>Home</Link>
               </li>
-              <li>
-                <Link to={"/updateProfile"}>Update Profile</Link>
-              </li>
+              {user && (
+                <li>
+                  <Link to={"/updateProfile"}>Update Profile</Link>
+                </li>
+              )}
               {user && (
                 <li>
                   <Link to={"/myprofile"}>My Profile</Link>
@@ -55,14 +57,16 @@ const Navbar = () => {
             <h2 className="text-xl sm-text-2xl">Wild Explore</h2>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex lg:border-2 lg:rounded-full">
+        <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link to={"/"}>Home</Link>
             </li>
-            <li>
-              <Link to={"/updateProfile"}>Update Profile</Link>
-            </li>
+            {user && (
+              <li>
+                <Link to={"/updateProfile"}>Update Profile</Link>
+              </li>
+            )}
             {user && (
               <li>
                 <Link to={"/myprofile"}>My Profile</Link>

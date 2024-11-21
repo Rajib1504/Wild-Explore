@@ -96,16 +96,15 @@ const Login = () => {
             >
               Login
             </button>
-
-            <button
-              type="submit"
-              onClick={handelgoogle}
-              className="w-full btn py-2 text-white bg-blue-300 rounded-md hover:bg-blue-400 focus:outline-none felx gap-3 items-center"
-            >
-              <FaGoogle />
-              Google Login
-            </button>
           </form>
+          <button
+            type="submit"
+            onClick={handelgoogle}
+            className="w-full btn py-2 text-white bg-blue-300 rounded-md hover:bg-blue-400 focus:outline-none felx gap-3 items-center"
+          >
+            <FaGoogle />
+            Google Login
+          </button>
 
           {/* Register Link */}
           <p className="text-center text-sm text-black-500">
