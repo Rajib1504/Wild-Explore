@@ -46,8 +46,6 @@ const Login = () => {
 
           {/* Form */}
           <form onSubmit={handelSubmit} className="flex flex-col gap-2">
-            {/* Email Field */}
-
             <h2 className="text-left font-semibold">Email Address:</h2>
             <input
               type="email"
