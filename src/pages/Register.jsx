@@ -23,7 +23,7 @@ const Register = () => {
     const email = form.get("email");
     const password = form.get("password");
     const terms = e.target.terms.checked;
-    console.log({ name, photo, email, password });
+    // console.log({ name, photo, email, password });
 
     const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
     if (!regex.test(password)) {
@@ -49,7 +49,7 @@ const Register = () => {
             navigate("/");
           })
           .catch((err) => {
-            console.log(err);
+            // console.log(err);
           });
       })
       .catch((error) => {

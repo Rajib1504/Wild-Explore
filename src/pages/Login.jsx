@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  console.log(email);
+  // console.log(email);
   const { login, setUser, logInbyGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     login(email, password)
       .then((result) => {

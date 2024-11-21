@@ -27,10 +27,10 @@ const Banner = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-              <h2 className="text-xl sm:text-2xl  animate__animated animate__fadeInUp animate__slow animate__delay-1s  lg:text-3xl font-semibold">
+              <h2 className="text-xl sm:text-2xl  animate__animated animate__fadeInUp animate__slow   lg:text-3xl font-semibold">
                 Conquer the Peaks
               </h2>
-              <p className="mt-2 text-sm sm:text-base  animate__animated animate__fadeInUp animate__slow animate__delay-1s  lg:text-lg">
+              <p className="mt-2 text-sm sm:text-base  animate__animated animate__fadeInUp animate__slow   lg:text-lg">
                 Description: Embark on thrilling journeys through majestic
                 mountain ranges, embracing the icy allure of nature. Explore
                 untamed beauty and discover adventure like never before.

@@ -3,7 +3,7 @@ import React from "react";
 const PracticeText = () => {
   return (
     <div>
-      <div className="bg-[#f0f7fad7]  animate__animated animate__fadeInUp animate__slower animate__delay-4s mt-4">
+      <div className="bg-blue-50  animate__animated animate__fadeInUp animate__slower animate__delay-4s mt-4">
         <div className=" flex flex-col justify-center items-center gap-3 py-6 sm:w-full md:w-11/12">
           <h1 className="text-2xl font-light mt-4">
             {" "}

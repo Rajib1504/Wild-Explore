@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IoIosCalendar } from "react-icons/io";
 import { FaPersonHiking } from "react-icons/fa6";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { FaMoneyCheckAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import Footer from "./Footer";
-import { ScrollRestoration, useLoaderData, useParams } from "react-router-dom";
+import {
+  ScrollRestoration,
+  useLoaderData,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Marquee from "react-fast-marquee";
 import Modal from "../Components/Modal";
@@ -14,7 +19,7 @@ const AdventureDetails = () => {
   //   const { id } = useParams();
   //   const adventureId = parseInt(id);
   const singleData = useLoaderData();
-  console.log(singleData);
+  // console.log(singleData);
 
   const handleExpertTalk = () => {
     const currentDate = new Date();
@@ -26,6 +31,12 @@ const AdventureDetails = () => {
       document.getElementById("my_modal_5").showModal();
     }
   };
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname.includes(`/card/${singleData}`)) {
+      document.title = `${card?.adventure_title} | Wild Explore`;
+    }
+  }, [location]);
   const {
     SpecialInstructions,
     MaxGroupSize,

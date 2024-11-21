@@ -9,7 +9,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const ForgetPassword = () => {
   const { forgetPassword } = useContext(AuthContext);
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   const email = location.state?.email || "";
   const handleResetPassword = (e) => {
     e.preventDefault();
