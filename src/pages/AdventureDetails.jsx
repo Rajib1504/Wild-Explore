@@ -23,14 +23,14 @@ const AdventureDetails = () => {
 
   const handleExpertTalk = () => {
     const currentDate = new Date();
-    const currentTimeHour = currentDate.getHours();
-
-    if (currentTimeHour >= 10 && currentTimeHour < 20) {
-      window.open("https://meet.google.com/", "_blank");
+    const currentHour = currentDate.getHours();
+    if (currentHour >= 10 && currentHour >= 20) {
+      window.open("https://meet.google.com/landing", "_blank");
     } else {
       document.getElementById("my_modal_5").showModal();
     }
   };
+
   const location = useLocation();
   useEffect(() => {
     if (location.pathname.includes(`/card/${singleData}`)) {
@@ -57,99 +57,7 @@ const AdventureDetails = () => {
     <>
       <ScrollRestoration></ScrollRestoration>
       <Navbar></Navbar>
-      {/* <div className="hero bg-blue-100 rounded-lg p-3">
-        <div className="hero-content flex-col lg:flex-row flex-wrap gap-6 items-center">
-          <img
-            src={Image}
-            alt={AdventureTitle}
-            className="max-w-md w-full rounded-lg shadow-2xl"
-          />
-          <div className="flex flex-col gap-3 p-4">
-            <h1 className="sm:text-4xl text-3xl font-bold text-center text-gray-500">
-              {AdventureTitle}
-            </h1>
-            <p className="text-center text-gray-700">{ShortDescription}</p>
 
-            <div className="flex flex-col items-center justify-center">
-              <p className="md:text-xl text-gray-500">Booking Availability</p>
-              <p>{BookingAvailability}</p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center">
-              <p className="text-xl text-gray-500">Adventure Level</p>
-              <p>{AdventureLevel}</p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center">
-              <p className="text-xl flex-col justify-center flex text-gray-500">
-                Items Included
-              </p>
-              <ul>
-                {IncludedItems.map((item, id) => (
-                  <li key={id} className="text-sm sm:text-base">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-col items-center justify-center">
-              <p className="text-xl text-gray-500">Eco Features</p>
-              <ul>
-                {EcoFriendlyFeatures.map((item, id) => (
-                  <li className="text-sm sm:text-base" key={id}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-col items-center justify-center">
-              <p className="text-xl text-gray-500">Special Instructions</p>
-              <ul>
-                {SpecialInstructions.map((item, id) => (
-                  <li className="text-sm sm:text-base" key={id}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-wrap justify-start items-center gap-6 overflow-x-auto w-full">
-              <div className="flex items-center gap-2">
-                <FaPersonHiking className="text-3xl text-blue-400" />
-                <p className="text-sm sm:text-base">{CategoryName}</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <IoIosCalendar className="text-3xl text-blue-400" />
-                <p className="text-sm sm:text-base">{Duration}</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <BsFillPeopleFill className="text-3xl text-blue-400" />
-                <p className="text-sm sm:text-base">{MaxGroupSize}</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <MdLocationPin className="text-3xl text-blue-400" />
-                <p className="text-sm sm:text-base">{Location}</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaMoneyCheckAlt className="text-3xl text-blue-400" />
-                <p className="text-sm sm:text-base">{AdventureCost}</p>
-              </div>
-            </div>
-
-            <div className="mx-auto m-2">
-              <button
-                onClick={handleExpertTalk}
-                className="btn btn-primary btn-wide"
-              >
-                Talk to Us
-              </button>
-              <Modal />
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="card bg-base-100 ">
         <div className="card-body items-center text-center">
           <h2 className="card-title text-3xl text-gray-700">
