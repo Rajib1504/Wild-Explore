@@ -3,7 +3,7 @@
 **Wild Explore** is a mountain adventure website designed to promote eco-friendly and sustainable tourism. The platform allows users to explore mountain adventures while respecting and preserving nature and biodiversity. Through this project, we aim to highlight the importance of eco-friendly tourism and encourage users to be more mindful of their environmental footprint while enjoying beautiful outdoor adventures.
 
 ## 🔗 Live Project URL
-[Wild Explore Live Site](https://wild-explore.web.app)
+[Wild Explore Live Site](https://wild-explore.web.app) 
 
 ## ⚡ Features
 
