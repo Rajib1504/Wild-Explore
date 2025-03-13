@@ -14,7 +14,7 @@
   Only logged-in users can access detailed tour information, ensuring that sensitive details are available to registered members.
 
 - **Tour Details**:  
-  Users can read comprehensive information about each mountain tour, focusing on eco-friendly practices like waste reduction, carbon footprint minimization, and local conservation efforts.
+  Users can read comprehensive information about each mountain tour and trips, focusing on eco-friendly practices like waste reduction, carbon footprint minimization, and local conservation efforts.
 
 - **Chat Feature**:  
   The platform provides a chat feature that allows users to communicate directly with the team for personalized queries about the tours, bookings, and other related information.
